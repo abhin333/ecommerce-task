@@ -32,16 +32,56 @@
     padding: 16px;
     box-sizing: border-box;
     border-bottom: 1px solid #f3f4f6;
+    position: relative;
+}
+
+/* Shimmer loader for lazy loading images */
+.product-image-skeleton {
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    border-radius: 8px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        #f3f4f6 0%,
+        #e5e7eb 50%,
+        #f3f4f6 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-animation 1.5s infinite;
+}
+
+@keyframes shimmer-animation {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 .product-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.product-card:hover .product-image {
+.product-image.loading {
+    opacity: 0;
+}
+
+.product-image.loaded {
+    opacity: 1;
+}
+
+.product-card:hover .product-image.loaded {
     transform: scale(1.03);
 }
 

@@ -9,6 +9,7 @@ export const ProductProvider = ({ children }) => {
     minPrice: "",
     maxPrice: "",
   });
+  const [searchQuery, setSearchQuery] = useState("");
   const [cartCount, setCartCount] = useState(0);
 
   return (
@@ -16,10 +17,13 @@ export const ProductProvider = ({ children }) => {
       value={{
         filters,
         setFilters,
-        cartCount, setCartCount
+        searchQuery,
+        setSearchQuery,
+        cartCount,
+        setCartCount,
       }}
     >
       {children}
     </ProductContext.Provider>
   );
-};
+};

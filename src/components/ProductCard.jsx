@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/ProductCard.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 
 const ProductCard = ({ product }) => {
   const { cartCount, setCartCount } = useContext(ProductContext);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,10 +23,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card" onClick={handleCardClick}>
       <div className="product-image-container">
+        {!imageLoaded && <div className="product-image-skeleton shimmer"></div>}
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="product-image"
+          className={`product-image ${imageLoaded ? "loaded" : "loading"}`}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
         />
       </div>
 

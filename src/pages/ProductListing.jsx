@@ -9,7 +9,7 @@ import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
 
 const ProductListing = () => {
-    const { filters, setFilters } = useContext(ProductContext);
+    const { filters, setFilters, searchQuery } = useContext(ProductContext);
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -48,7 +48,7 @@ const ProductListing = () => {
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [filters]);
+    }, [filters, searchQuery]);
 
     const brands = useMemo(() => {
         return [
@@ -78,14 +78,21 @@ const ProductListing = () => {
                 !filters.maxPrice ||
                 product.price <= Number(filters.maxPrice);
 
+            const searchMatch =
+                !searchQuery ||
+                product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                (product.brand && product.brand.toLowerCase().includes(searchQuery.toLowerCase()));
+
             return (
                 categoryMatch &&
                 brandMatch &&
                 minPriceMatch &&
-                maxPriceMatch
+                maxPriceMatch &&
+                searchMatch
             );
         });
-    }, [products, filters]);
+    }, [products, filters, searchQuery]);
 
     const totalPages = Math.ceil(
         filteredProducts.length / PRODUCTS_PER_PAGE

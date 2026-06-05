@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById } from "../api/productApi";
 import Loader from "../components/Loader";
+import { ProductContext } from "../context/ProductContext";
 import "../styles/ProductDetails.css";
 
 const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
+    const { cartCount, setCartCount } = useContext(ProductContext);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
         const loadProduct = async () => {
@@ -18,6 +21,10 @@ const ProductDetail = () => {
     }, [id]);
 
     if (!product) return <Loader />;
+
+    const handleAddToCart = () => {
+        setCartCount(cartCount + 1);
+    };
 
     return (
         <div className="detail-page-container">
@@ -31,7 +38,13 @@ const ProductDetail = () => {
 
                 <div className="product-media-column">
                     <div className="main-image-card">
-                        <img src={product.thumbnail} alt={product.title} />
+                        {!imageLoaded && <div className="product-image-skeleton shimmer"></div>}
+                        <img 
+                            src={product.thumbnail} 
+                            alt={product.title} 
+                            className={imageLoaded ? "loaded" : "loading"}
+                            onLoad={() => setImageLoaded(true)}
+                        />
                     </div>
                 </div>
 
@@ -62,7 +75,7 @@ const ProductDetail = () => {
                     <hr className="info-divider" />
 
                     <div className="info-actions-wrapper">
-                        <button className="btn-add-to-cart" onClick={() => alert("Added to cart!")}>
+                        <button className="btn-add-to-cart" onClick={handleAddToCart}>
                             Add to Cart
                         </button>
                         <button className="btn-buy-now" onClick={() => alert("Proceeding directly to checkout...")}>
