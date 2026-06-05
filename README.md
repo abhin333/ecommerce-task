@@ -66,4 +66,4 @@ Data is fetched from:
 
 ## License
 
-This project is for learning and portfolio purposes.
+This project is for learning and task purposes.
