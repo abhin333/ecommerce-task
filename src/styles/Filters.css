@@ -180,3 +180,58 @@
 .checkbox-label:hover .checkbox-text {
     color: #111827;
 }
+
+/* Mobile filter toggle button - hidden by default on desktop */
+.mobile-filter-toggle-btn {
+    display: none;
+    width: 100%;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease;
+}
+
+.mobile-filter-toggle-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .mobile-filter-toggle-btn {
+        display: flex;
+    }
+
+    .filters-sidebar {
+        display: none; /* Hide by default on mobile */
+        width: 100%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Show when isOpen state adds .open class */
+    .filters-sidebar.open {
+        display: block;
+        animation: slideDown 0.25s ease-out forwards;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

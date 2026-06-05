@@ -175,3 +175,30 @@
         gap: 8px;
     }
 }
+
+@media (max-width: 500px) {
+    .navbar-container {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 12px;
+        row-gap: 8px;
+    }
+
+    .logo {
+        font-size: 18px;
+        order: 1;
+    }
+
+    .nav-links {
+        order: 2;
+        gap: 12px;
+    }
+
+    .nav-search {
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+        margin-top: 2px;
+        height: 38px;
+    }
+}

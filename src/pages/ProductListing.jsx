@@ -18,6 +18,7 @@ const ProductListing = () => {
     const [error, setError] = useState("");
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [showMobileFilters, setShowMobileFilters] = useState(false);
 
     const PRODUCTS_PER_PAGE = 12;
 
@@ -116,11 +117,19 @@ const ProductListing = () => {
 
     return (
         <div className="container">
+            <button 
+                className="mobile-filter-toggle-btn"
+                onClick={() => setShowMobileFilters(!showMobileFilters)}
+            >
+                {showMobileFilters ? "Hide Filters ✕" : "Filter & Sort ⚙️"}
+            </button>
+
             <Filters
                 categories={categories}
                 brands={brands}
                 filters={filters}
                 setFilters={setFilters}
+                isOpen={showMobileFilters}
             />
 
             <div className="content">

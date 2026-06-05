@@ -272,3 +272,23 @@ body {
     background-position: 200% 0;
   }
 }
+
+/* Responsive Grid layout overrides */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .container {
+    padding: 0 12px;
+    margin: 15px auto;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

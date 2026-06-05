@@ -5,6 +5,7 @@ const Filters = ({
   brands,
   filters,
   setFilters,
+  isOpen,
 }) => {
   const handleCategoryChange = (e) => {
     setFilters({ ...filters, category: e.target.value });
@@ -36,7 +37,7 @@ const Filters = ({
   };
 
   return (
-    <aside className="filters-sidebar">
+    <aside className={`filters-sidebar ${isOpen ? "open" : ""}`}>
       <div className="filters-header">
         <h2>Filters</h2>
         <button className="clear-all-btn" onClick={handleClearAll}>
