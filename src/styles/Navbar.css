@@ -1,0 +1,177 @@
+/* Reset & Base variables */
+.navbar {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #131921;
+}
+
+/* --- TOP BAR LAYOUT --- */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    gap: 16px;
+    height: 56px;
+    box-sizing: border-box;
+}
+
+/* Hover effect wrapper used across Amazon buttons */
+.logo, .nav-delivery, .nav-link-item, .nav-cart, .sub-nav-links a, .menu-all {
+    border: 1px solid transparent;
+    padding: 4px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.logo:hover, .nav-delivery:hover, .nav-link-item:hover, .nav-cart:hover, .sub-nav-links a:hover, .menu-all:hover {
+    border: 1px solid #ffffff;
+}
+
+/* Logo specific elements */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.logo-dot {
+    color: #febd69;
+    font-size: 13px;
+}
+
+/* Delivery block */
+.nav-delivery {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text helpers */
+.text-light {
+    font-size: 12px;
+    color: #ccc;
+    display: block;
+}
+.text-bold {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+/* Search engine layout */
+.nav-search {
+    flex: 1;
+    display: flex;
+    height: 40px;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.nav-search:focus-within {
+    outline: 2px solid #f3a847;
+}
+
+.search-dropdown {
+    background-color: #f3f3f3;
+    border: none;
+    border-right: 1px solid #cdcdcd;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #febd69;
+    border: none;
+    width: 45px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background-color: #f3a847;
+}
+
+/* Right Navigation Group */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Cart badge structure */
+.nav-cart {
+    display: flex;
+    align-items: flex-end;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 22px;
+    margin-right: 4px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    background-color: #f3a847;
+    color: #131921;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0 6px;
+}
+
+/* --- BOTTOM SECONDARY BAR --- */
+.sub-navbar {
+    background-color: #232f3e;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    font-size: 14px;
+}
+
+.sub-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-all {
+    background: transparent;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sub-nav-promo {
+    color: #febd69;
+    font-weight: bold;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .hide-mobile, .nav-delivery, .sub-nav-promo {
+        display: none !important;
+    }
+    .navbar-container {
+        gap: 8px;
+    }
+}

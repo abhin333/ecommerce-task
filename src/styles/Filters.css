@@ -1,0 +1,182 @@
+/* Sidebar Panel Container */
+.filters-sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1f2937;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Header & Clear Button */
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.filters-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.clear-all-btn {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.clear-all-btn:hover {
+    background-color: #eff6ff;
+    text-decoration: underline;
+}
+
+/* Individual Filter Groups */
+.filter-group {
+    margin-bottom: 24px;
+}
+
+.filter-group h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4b5563;
+    margin: 0 0 12px 0;
+}
+
+/* Styled Dropdown Selection Container */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #374151;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Removes native arrow to match custom sleek styling */
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 10px;
+    color: #9ca3af;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-wrapper select:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Price Inputs Form Grid */
+.price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-input-box {
+    display: flex;
+    align-items: center;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0 8px;
+    flex: 1;
+}
+
+.price-input-box:focus-within {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.price-input-box span {
+    color: #9ca3af;
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.price-input-box input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    color: #374151;
+}
+
+/* Removes spin buttons on number input fields */
+.price-input-box input::-webkit-outer-spin-button,
+.price-input-box input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.price-separator {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* Brand Checkboxes */
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 200px; /* Optional scroll if list gets very long */
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    accent-color: #2563eb; /* Modern browsers honor this variable seamlessly */
+    margin: 0 10px 0 0;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #4b5563;
+    transition: color 0.15s ease;
+}
+
+.checkbox-label:hover .checkbox-text {
+    color: #111827;
+}

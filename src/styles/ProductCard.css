@@ -1,0 +1,122 @@
+/* Card Container Grid Wrapper */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    width: 240px;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Hover elevation state */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: #d1d5db;
+}
+
+/* Image Uniform Scaling Wrapper */
+.product-image-container {
+    width: 100%;
+    height: 200px;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+/* Metadata Block Info */
+.product-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Clean title truncation */
+.product-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Truncates long text cleanly into exactly 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 42px; /* Keeps dimensions stable across multi-line blocks */
+}
+
+/* Price & Rating Row Flexbox alignment */
+.product-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Rating Badge UI chip */
+.product-rating {
+    display: flex;
+    align-items: center;
+    background-color: #fef3c7;
+    color: #d97706;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.star-icon {
+    margin-right: 3px;
+    font-size: 13px;
+}
+
+/* Sleek Primary Action Callout Button */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    margin-top: auto; /* Pushes button to bottom boundary seamlessly */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.98);
+}

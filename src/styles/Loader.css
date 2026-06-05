@@ -1,0 +1,52 @@
+/* Center wrapper covering the loading viewport area */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Gives plenty of breathing room inside components */
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* The Animated Spinner Ring */
+.loader-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f3f3; /* Light gray background track */
+    border-top: 4px solid #2563eb; /* Modern e-commerce accent blue */
+    border-radius: 50%;
+    animation: spin 1s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+}
+
+/* Elegant status typography underneath */
+.loader-text {
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4b5563;
+    letter-spacing: 0.02em;
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+
+/* Smooth infinite rotation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Prevents the loader from violently flashing instantly onto the screen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
