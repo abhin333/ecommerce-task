@@ -1,16 +1,69 @@
-# React + Vite
+# E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive E-Commerce web app built with **React 19**, **Vite**, and **Vanilla CSS**. Users can browse products, search, filter, view detailed product information, and manage a shopping cart. Product data is fetched from the DummyJSON API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Product listing with pagination
+* Search and category filtering
+* Product detail pages
+* Shopping cart management
+* Responsive design
+* Loading and error handling
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React 19
+* Vite
+* React Router DOM v7
+* Axios
+* Context API
+* Vanilla CSS
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash or cmd or git
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+Open:
+
+```text
+http://localhost:5173
+```
+
+## Build for Production
+
+```bash
+pnpm build
+pnpm preview
+```
+
+## Project Structure
+
+```text
+src/
+├── api/
+├── components/
+├── context/
+├── hooks/
+├── pages/
+├── routes/
+├── styles/
+├── App.jsx
+└── main.jsx
+```
+
+## API
+
+Data is fetched from:
+
+[DummyJSON API](https://dummyjson.com?utm_source=chatgpt.com)
+
+## License
+
+This project is for learning and portfolio purposes.
