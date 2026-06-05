@@ -7,7 +7,6 @@ A responsive E-Commerce web app built with **React 19**, **Vite**, and **Vanilla
 * Product listing with pagination
 * Search and category filtering
 * Product detail pages
-* Shopping cart management
 * Responsive design
 * Loading and error handling
 
